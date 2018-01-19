@@ -21,4 +21,4 @@ Please do not commit node_modules and check your gitignore before.
 
 Check the [Zeplin](https://app.zeplin.io/project/59fc83791ed6d9015cc236d5)
 I highly recommand the [BEM syntax](http://getbem.com/naming/)
-Url project : samuel-barraud.fr/projets/nike
+Url project : (http://samuel-barraud.fr/projets/nike)
