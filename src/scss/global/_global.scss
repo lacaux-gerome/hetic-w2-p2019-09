@@ -1,0 +1,27 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  background-color: black;
+}
+
+.content {
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: #03fdfc;
+  color: $black;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* for vertical scrollbars */
+  height: 8px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #03fdfc;
+}

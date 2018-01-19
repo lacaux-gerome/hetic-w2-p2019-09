@@ -1,0 +1,22 @@
+.footer {
+  color: $grey-footer;
+  @include font-size(1.1);
+  font-family: $font-normal;
+  font-weight: 400;
+  background-color: $black;
+  padding-bottom: 10px;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & > div {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      li:nth-child(2) {
+        margin-left: 10px;
+      }
+    }
+  }
+}

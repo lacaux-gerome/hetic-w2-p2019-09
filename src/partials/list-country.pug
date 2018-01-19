@@ -1,0 +1,20 @@
+.country
+    h2.country__logo
+        <?xml version="1.0" encoding="UTF-8"?>
+        <svg enable-background="new 0 0 195.9 69.9" version="1.1" viewBox="0 0 195.9 69.9" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+        <title>logo nike</title>
+        <path d="m21.6 69.9c-5.8-0.2-10.6-1.8-14.4-4.8-0.7-0.6-2.4-2.3-3-3-1.4-1.7-2.5-3.7-3.2-5.8-2.1-6.3-1-14.6 3.1-23.8 3.5-7.8 9-15.5 18.5-26.3 1.4-1.6 5.6-6.2 5.6-6.2s-0.2 0.4-0.5 0.9c-2.5 4.2-4.4 8.6-5.8 13.3-1.9 6.8-1.6 12.6 0.7 17.2 1.6 3.1 4.2 5.7 7.3 7.3 5.3 2.6 13.1 2.8 22.7 0.6 0.7-0.2 33.2-8.8 72.2-19.2s71-18.9 71.1-18.9-90.8 38.9-137.9 59c-7.5 3.2-9.5 4-13 5.2-8.8 3.3-16.9 4.8-23.4 4.5z"/>
+        </svg>
+    h3.country__title select your location
+    ul.country__list
+        each zone in [{country: 'Amerique du Nord', stores: ['New York', 'Boston', 'San Francisco', 'Québec', 'Toronto', 'Montréal']},{country: 'test2', stores: ['5', '8']} ]
+            div
+                h4.country__list__zone= zone.country
+                div.country__list__plus
+                    span
+                    span
+                ul.country__list__selector
+                    each store in zone.stores
+                        li= store.toUpperCase()
+
+

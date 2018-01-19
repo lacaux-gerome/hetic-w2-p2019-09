@@ -1,0 +1,51 @@
+.home {
+  width: 95%;
+  margin: 0 auto;
+  &__bullet{
+    &__list{
+      width: 40px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__title {
+    font-family: $font-normal;
+    @include font-size(3.5);
+    color: white;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  &__undertitle {
+    font-family: $font-normal;
+    @include font-size(2.5);
+    color: white;
+    font-weight: 400;
+  }
+  &__timer {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-top: 50vh;
+    &__box {
+      display: flex;
+      flex-direction: column;
+      p:first-child {
+        @include font-size(3.7);
+        font-family: $font-normal;
+        font-weight: 700;
+        color: white;
+      }
+      p:last-child {
+        @include font-size(1.2);
+        font-family: $font-normal;
+        font-weight: 500;
+        color: white;
+      }
+      & > p {
+        text-align: center;
+      }
+    }
+  }
+}

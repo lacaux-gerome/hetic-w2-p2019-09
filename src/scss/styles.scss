@@ -1,0 +1,18 @@
+//vendors
+
+//global
+@import 'global/_variable';
+@import "global/_fonts";
+@import 'global/_reset';
+
+//components
+@import 'components/_footer';
+@import "components/_loader";
+@import "components/_list-country";
+@import "components/_splash";
+@import "components/_button";
+@import "components/_header-physique";
+@import "global/_global";
+
+//pages
+@import "pages/_home";

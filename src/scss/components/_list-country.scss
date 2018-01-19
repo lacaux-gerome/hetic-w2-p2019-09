@@ -1,0 +1,109 @@
+.country {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.4s $easeInOutCubic;
+  transform: translateX(100%);
+  &__logo {
+    width: 40px;
+    fill: $black;
+    margin: 25px auto 15px auto;
+    padding: 5px;
+  }
+  &__title {
+    text-transform: uppercase;
+    color: $black;
+    @include font-size(1.8);
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    &__zone {
+      padding: 1.5rem;
+      text-transform: uppercase;
+      font-family: $font-normal;
+      font-weight: 500;
+      @include font-size(1.5);
+      border-bottom: 1px solid #d3d2d2;
+      cursor: pointer;
+      position: relative;
+    }
+    &__selector {
+      overflow: hidden;
+      height: 0px;
+      transition: 0.5s $easeInOutCubic;
+      & > li {
+        background-color: $grey;
+        line-height: 70px;
+        padding-left: 1.5rem;
+        @include font-size(1.5);
+        cursor: pointer;
+        &:nth-child(0n+2){
+          border-top: 1px solid #d3d2d2;
+        }
+      }
+      &--active {
+      }
+    }
+    .minus {
+      span:first-child {
+        height: 0%;
+      }
+      span:last-child {
+        width: 0%;
+        transition-delay: 0s;
+        &:before {
+          width: 12px;
+          transition-delay: 0.4s;
+        }
+      }
+    }
+    &__plus {
+      position: absolute;
+      right: 1.6rem;
+      top: 1.6rem;
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      span:first-child {
+        position: absolute;
+        top: 0;
+        left: 40%;
+        width: 20%;
+        height: 100%;
+        background-color: $black;
+        transition: 0.2s;
+        transition-delay: 0.3s;
+      }
+      span:last-child {
+        position: absolute;
+        top: 40%;
+        right: 0;
+        width: 100%;
+        height: 20%;
+        background-color: $black;
+        transition: 0.4s;
+        transition-delay: 0.4s;
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 0;
+          height: 100%;
+          background-color: $black;
+          transition: 0.2s;
+          transition-delay: 0s;
+        }
+      }
+    }
+  }
+}
