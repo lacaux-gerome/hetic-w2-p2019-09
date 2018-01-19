@@ -29,6 +29,10 @@
   },
   "dependencies": {
     "gulp-if": "^2.0.2",
+<<<<<<< HEAD
     "moment": "^2.20.1"
+=======
+    "three": "^0.89.0"
+>>>>>>> 1fe25f363353f03ab7e469deac2d5d2bd601ff08
   }
 }
