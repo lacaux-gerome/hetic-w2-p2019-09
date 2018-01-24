@@ -1,8 +1,8 @@
 .home {
   width: 95%;
   margin: 0 auto;
-  &__bullet{
-    &__list{
+  &__bullet {
+    &__list {
       width: 40px;
       display: flex;
       justify-content: space-between;
@@ -36,16 +36,38 @@
         font-family: $font-normal;
         font-weight: 700;
         color: white;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 40px;
+        .item {
+          animation-name: itemRoolIn;
+          animation-duration: 0.4s;
+          animation-timing-function: linear;
+          animation-fill-mode: forwards;
+          @keyframes itemRoolIn {
+            from {
+              transform: translateY(100%);
+            }
+            to {
+              transform: translateY(0%);
+            }
+          }
+          &--killed {
+            transform: translateY(-100%);
+            transition: 0.4s $easeInOutCubic;
+          }
+        }
       }
-      p:last-child {
-        @include font-size(1.2);
-        font-family: $font-normal;
-        font-weight: 500;
-        color: white;
-      }
-      & > p {
-        text-align: center;
-      }
+    }
+    p:last-child {
+      @include font-size(1.2);
+      font-family: $font-normal;
+      font-weight: 500;
+      color: white;
+    }
+    & > p {
+      text-align: center;
     }
   }
 }
