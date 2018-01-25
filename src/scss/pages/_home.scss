@@ -39,35 +39,56 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        height: 40px;
+        height: 37px;
         .item {
-          animation-name: itemRoolIn;
-          animation-duration: 0.4s;
-          animation-timing-function: linear;
-          animation-fill-mode: forwards;
-          @keyframes itemRoolIn {
-            from {
-              transform: translateY(100%);
-            }
-            to {
-              transform: translateY(0%);
+          &__others{
+            &--active {
+              animation-name: itemRoolIn;
+              animation-duration: 1s;
+              animation-iteration-count: 1;
+              animation-timing-function: linear;
+              animation-fill-mode: forwards;
+              @keyframes itemRoolIn {
+                0% {
+                  transform: translateY(0%);
+                }
+                50%{
+                  transform: translateY(-120%);
+                }
+                50.01%{
+                  transform: translateY(120%);
+                }
+                100% {
+                  transform: translateY(0%);
+                }
+              }
             }
           }
-          &--killed {
-            transform: translateY(-100%);
-            transition: 0.4s $easeInOutCubic;
+          &__second {
+            &--active {
+              animation-name: seconds;
+              animation-duration: 1s;
+              animation-iteration-count: infinite;
+              animation-timing-function: linear;
+              animation-fill-mode: forwards;
+              @keyframes seconds {
+                0% {opacity: 0;}
+                50%{opacity: 1}
+                100% {opacity: 0;}
+              }
+            }
           }
         }
       }
-    }
-    p:last-child {
-      @include font-size(1.2);
-      font-family: $font-normal;
-      font-weight: 500;
-      color: white;
-    }
-    & > p {
-      text-align: center;
+      p:last-child {
+        @include font-size(1.2);
+        font-family: $font-normal;
+        font-weight: 500;
+        color: white;
+      }
+      & > p {
+        text-align: center;
+      }
     }
   }
 }

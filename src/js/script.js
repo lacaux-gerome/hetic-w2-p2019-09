@@ -67,7 +67,15 @@ var THREE = require('three');
     // clef all qui a pour valeur un tableau de toutes mes valeurs
     timer.all = allValues;
 
-    setInterval(function () {
+    function initDomElements() {
+        let initDomElements = document.querySelectorAll('.home__timer__box > p > span');
+        for (let i = 0; i < initDomElements.length; i++) {
+            initDomElements[i].innerHTML = timer.all[i];
+        }
+    }
+    initDomElements();
+
+    (function CreateClock() {
         let actualTimer = {}; // object for the new value of timer
         //diff method remove value to time, we need to reset it everytimes
         time = moment('2018-02-01T20:00:00');
@@ -95,72 +103,21 @@ var THREE = require('three');
                 occurence.push(i);
 
         //on parcours occurence
-        console.log('occurence', occurence);
         for (let i = 0; i < occurence.length; i++) {
-            const newDomElement = "<span class='item'>" + actualTimer.all[occurence[i]].toString() + "</span>";
+            // get element by id exemple div#entry3
             const parent = document.getElementById("entry" + occurence[i]);
-            const oldElement = parent.querySelector('span:first-child');
-            oldElement.classList.add('item--killed');
-            //insérer content dans notre nouvel element
-            console.log('newDom', newDomElement);
-            parent.insertAdjacentHTML('beforeend', newDomElement);
+            const element = parent.querySelector('span:first-child');
+            element.innerHTML = actualTimer.all[occurence[i]].toString();
+            if (occurence[i] === '3')
+                element.classList.add('item__second--active');
+            else
+                element.classList.add('item__others--active');
+            setTimeout(CreateClock, 1000);
         }
-
-        setTimeout(function () {
-            let listOldElements = document.querySelectorAll('.item--killed');
-            for (let i = 0; i < listOldElements.length; i++){
-                listOldElements[i].remove();
-            }
-        },950);
 
         // on re set timer avec la valeur d'actualTimer
         timer = actualTimer;
-    }, 15000);
+        // run CreateClock
+        setInterval(CreateClock, 1000);
+    })();
 })();
-
-
-/*
-setInterval(function () {
-    let actualTimer = []; // object for the new value of timer
-    //diff method remove value to time, we need to reset it everytimes
-    time = moment('2018-02-01T20:00:00');
-    // calcul the diff between time and now
-    actualTimer.push(-moment().diff(time, 'days'));
-    actualTimer.push(-moment().diff(time.subtract(24 * actualTimer[0], 'hours'), 'hours'));
-    actualTimer.push(-moment().diff(time.subtract(24 * actualTimer[1], 'hours'), 'hours'));
-    actualTimer.push(-moment().diff(time.subtract(60 * actualTimer[2], 'minutes'), 'minutes'));
-    actualTimer.push = -moment().diff(time.subtract(60 * actualTimer.minutes, 'seconds'), 'seconds');
-    // transform to string and check length
-    for (let index in actualTimer) {
-        actualTimer[index] = actualTimer[index].toString();
-        if (actualTimer[index].length === 1){
-            actualTimer[index] = '0' + actualTimer[index];
-        }
-    }
-    let occurence = [];
-    let stepper = 0;
-    for (let index in actualTimer) {
-        if (actualTimer[index] !== timer[index]) {
-            occurence.push(stepper.toString());
-        }
-        stepper += 1;
-    }
-    // on re set timer avec la valeur d'actualTimer
-    timer = actualTimer;
-    //on parcours occurence
-    for (let i = 0 ; i < occurence.length; i ++){
-        const newDomElement = document.createElement("span");
-        const parent = document.getElementById("entry" + occurence[i]);
-        const oldElement = parent.querySelector('span:first-child');
-        oldElement.classList.add('killed');
-        console.log('newDomElement',newDomElement.nextSibling);
-        console.log('oldElement',oldElement);
-        parent.insertBefore(oldElement, newDomElement.nextSibling);
-    }
-    setTimeout(function () {
-        let listOldElements = document.querySelectorAll('.killed');
-        for (let i = 0; i < listOldElements.length; i++){
-            listOldElements[i].remove();
-        }
-    },950);
-}, 1000);*/
