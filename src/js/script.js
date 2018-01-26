@@ -1,51 +1,104 @@
 // require
 var moment = require('moment');
-var THREE = require('three');
 
 (function () {
-// list country
-    var title = document.querySelectorAll('.country__list__zone');
+    // list country
+    const title = document.querySelectorAll('.country__list__zone');
+    //array to stock all te properties of our list
+    let arrayProps = [];
+
+    // init all properties of one list
+    function constructor(open) {
+        this.open = open || false,
+        this.heightList = 0,
+        this.hide = function (list, plus) {
+            this.heightList = 0;
+            list.style.height = this.heightList;
+            list.classList.remove('country__list__selector--active');
+            plus.classList.remove('minus');
+            this.open = false;
+        },
+        this.show = function (list) {
+            list.style.height = this.heightList + 'px';
+            this.open = true;
+        }
+        this.checkAllshow = function (arrayProps) {
+            let openElems = document.querySelectorAll('.country__list__selector');
+            for (let i = 0; i < openElems.length; i++) {
+                const element = openElems[i];
+                if (element.classList.contains('country__list__selector--active')) {
+                    arrayProps[i].open = false;
+                    arrayProps[i].heightList = 0;
+                    const list = title[i].nextSibling;
+                    const plus = title[i].previousSibling;
+                    list.classList.remove('country__list__selector--active');
+                    plus.classList.remove('minus');
+                    list.style.height = 0;
+                }
+            }
+        }
+    }
 
     for (let i = 0; i < title.length; i++) {
+        let props = new constructor();
+        arrayProps.push(props);
         title[i].addEventListener('click', function () {
-            let parent = title[i].parentNode;
-            let list = parent.querySelector('.country__list__selector');
-            let plus = parent.querySelector('.country__list__plus');
-            if (list.classList.contains('country__list__selector--active')) {
-                if (list.clientHeight > 0) {
-                    list.style.height = '0px';
-                }
-                list.classList.toggle('country__list__selector--active');
-                plus.classList.toggle('minus');
+            let propsItem = arrayProps[i];
+            const list = title[i].nextSibling;
+            const plus = title[i].previousSibling;
+
+            if (propsItem.open) {
+                propsItem.hide(list, plus);
             }
             else {
-                remove(list, plus);
+                propsItem.checkAllshow(arrayProps);
+                list.classList.add('country__list__selector--active');
+                plus.classList.add('minus');
+                const listActive = document.querySelectorAll('.country__list__selector--active > li');
+                for (let x = 0; x < listActive.length; x++) {
+                    propsItem.heightList += listActive[x].clientHeight;
+                }
+                propsItem.show(list);
             }
+            console.log("propsItem ", propsItem);
         })
-    }
-    ;
+        /* title[i].addEventListener('click', function () {
+            let open = false,
+                initHeight = 0;
 
-    function remove(list, plus) {
-        var listAll = document.querySelectorAll('.country__list__selector');
-        var plusAll = document.querySelectorAll('.country__list__plus');
-        for (let j = 0; j < listAll.length; j++) {
-            listAll[j].classList.remove('country__list__selector--active');
-            listAll[j].style.height = '0px';
-            plusAll[j].classList.remove('minus');
-        }
+            console.log("open ", open);
+
+            const list = title[i].nextSibling;
+            const plus = title[i].previousSibling;
+
+            if (open) {
+                list.style.height = initHeight;
+                list.classList.remove('country__list__selector--active');
+                plus.classList.remove('minus');
+                open = false;
+            }
+            else {
+                list.classList.add('country__list__selector--active');
+                plus.classList.add('minus');
+                const listActive = document.querySelectorAll('.country__list__selector--active > li');
+                let heightList = 0;
+                for (let x = 0; x < listActive.length; x++) {
+                    heightList += listActive[x].clientHeight;
+                }
+                list.style.height = heightList + 'px';
+                open = true;
+            }
+        }) */
+    }
+
+    /* function remove(list, plus) {
+        var listActive = document.querySelector('.country__list__selector--active');
+        var plusActive = listActive.previousSibling;
+        listActive.classList.remove('country__list__selector--active');
+        listActive.style.height = '0px';
+        plusActive.classList.remove('minus');
         add(list, plus);
-    }
-
-    function add(list, plus) {
-        list.classList.add('country__list__selector--active');
-        plus.classList.add('minus');
-        var listActive = document.querySelectorAll('.country__list__selector--active > li'),
-            heightList = 0;
-        for (let x = 0; x < listActive.length; x++) {
-            heightList += listActive[x].clientHeight;
-        }
-        list.style.height = heightList + 'px';
-    }
+    } */
 })();
 
 (function () {
@@ -67,6 +120,7 @@ var THREE = require('three');
     // clef all qui a pour valeur un tableau de toutes mes valeurs
     timer.all = allValues;
 
+    // push in html all the values
     function initDomElements() {
         let initDomElements = document.querySelectorAll('.home__timer__box > p > span');
         for (let i = 0; i < initDomElements.length; i++) {
@@ -75,7 +129,7 @@ var THREE = require('three');
     }
     initDomElements();
 
-    (function CreateClock() {
+    setInterval(function () {
         let actualTimer = {}; // object for the new value of timer
         //diff method remove value to time, we need to reset it everytimes
         time = moment('2018-02-01T20:00:00');
@@ -112,12 +166,20 @@ var THREE = require('three');
                 element.classList.add('item__second--active');
             else
                 element.classList.add('item__others--active');
-            setTimeout(CreateClock, 1000);
         }
 
         // on re set timer avec la valeur d'actualTimer
         timer = actualTimer;
         // run CreateClock
-        setInterval(CreateClock, 1000);
-    })();
+    }, 1000);
+})();
+
+// nav bar toogle
+(function () {
+    const navBar = document.querySelector('.country');
+    const map = document.querySelector('.toggle-nav');
+
+    map.addEventListener('click', function () {
+        navBar.classList.toggle('country--active');
+    });
 })();

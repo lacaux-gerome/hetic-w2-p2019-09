@@ -9,10 +9,10 @@
     ul.country__list
         each zone in [{country: 'Amerique du Nord', stores: ['New York', 'Boston', 'San Francisco', 'Québec', 'Toronto', 'Montréal']},{country: 'test2', stores: ['5', '8']} ]
             div
-                h4.country__list__zone= zone.country
                 div.country__list__plus
                     span
                     span
+                h4.country__list__zone= zone.country
                 ul.country__list__selector
                     each store in zone.stores
                         li= store.toUpperCase()

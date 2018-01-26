@@ -1,6 +1,6 @@
 .header {
   background-color: white;
-  min-height: 70px;
+  min-height: 50px;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -9,9 +9,10 @@
     justify-content: space-between;
     width: 95%;
     & div:last-child {
-      width: 50px;
-      height: 50px;
-      background-color: red;
+      width: 40px;
+      height: 40px;
+      background-color: rgb(194, 194, 194);
+      cursor: pointer; 
     }
   }
 }

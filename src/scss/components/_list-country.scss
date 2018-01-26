@@ -4,10 +4,15 @@
   width: 100%;
   min-height: 100vh;
   position: fixed;
+  z-index: 1;
+  background-color: white;
   top: 0;
   left: 0;
-  transition: 0.4s $easeInOutCubic;
+  transition: 0.3s $easeInOutCubic;
   transform: translateX(100%);
+  &--active {
+    transform: translateX(0%);
+  }
   &__logo {
     width: 40px;
     fill: $black;
@@ -26,6 +31,9 @@
     list-style: none;
     display: flex;
     flex-direction: column;
+    & > div {
+      position: relative;
+    }
     &__zone {
       padding: 1.5rem;
       text-transform: uppercase;
@@ -39,18 +47,17 @@
     &__selector {
       overflow: hidden;
       height: 0px;
-      transition: 0.5s $easeInOutCubic;
+      transition: 0.3s linear;
+      transition-delay: 0s;
       & > li {
         background-color: $grey;
         line-height: 70px;
         padding-left: 1.5rem;
         @include font-size(1.5);
         cursor: pointer;
-        &:nth-child(0n+2){
+        &:nth-child(n+2){
           border-top: 1px solid #d3d2d2;
         }
-      }
-      &--active {
       }
     }
     .minus {
