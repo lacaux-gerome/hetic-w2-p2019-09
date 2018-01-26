@@ -1,4 +1,5 @@
-# nike-hetic-w2-p2019-09# ["Nike-Inte-Avancé" ] &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]
+
+# Nike-hetic-w2-p2019-09# ["Nike-Inte-Avancé" ] &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]
 
 This is the project made @HETIC with a groupe of 5 students.
 
@@ -6,16 +7,33 @@ This is the project made @HETIC with a groupe of 5 students.
 
 ### Installation
 
-1. Clone the repository.
-2. Run "yarn install" or "npm install" (better yarn).
-3. Run "yarn run dev" it will load a localhost:3000 in your virtual machine.
-
-Please do not commit node_modules and check your gitignore before.
+ 1. Clone the repository.
+ 2. Run "yarn install" or "npm install" (better yarn).
+ 3. Before strart the coding
 
 
-### In prod
+### In dev env
 
-1. Run "gulp default" to start the watcher. Compil Es6, SCSS, PUG and img from src to dist file.
+Please **do not commit node_modules** and check your gitignore before.
+
+Run
+
+> yarn run dev
+
+to start the watcher. 
+
+	 1. Compil Es6
+	 2. SCSS
+	 3. PUG
+	 4. Img
+
+From src to 
+
+> /dist
+
+### Git
+
+Pull everytime before push and try to be clear in your commit. We are 3 dev don't have hesitation to make a sentence to explain what and why you changed the code.
 
 ### Usefull links
 
