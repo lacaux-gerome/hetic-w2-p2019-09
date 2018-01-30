@@ -4,6 +4,9 @@
   justify-content: center;
   display: flex;
   align-items: center;
+  -webkit-box-shadow: 0px 10px 13px 0px rgba(0,0,0,0.09);
+  -moz-box-shadow: 0px 10px 13px 0px rgba(0,0,0,0.09);
+  box-shadow: 0px 10px 13px 0px rgba(0,0,0,0.09);
   &__container {
     display: flex;
     justify-content: space-between;

@@ -1,11 +1,14 @@
 body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  background-color: black;
+  background-color: #F5F5F5;
 }
 
 .content {
   min-height: 100vh;
+  &--active{
+    filter: blur(2px)
+  }
 }
 
 ::selection {

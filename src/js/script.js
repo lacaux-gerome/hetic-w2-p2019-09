@@ -60,48 +60,45 @@ var moment = require('moment');
                 }
                 propsItem.show(list);
             }
-            console.log("propsItem ", propsItem);
         })
-        /* title[i].addEventListener('click', function () {
-            let open = false,
-                initHeight = 0;
-
-            console.log("open ", open);
-
-            const list = title[i].nextSibling;
-            const plus = title[i].previousSibling;
-
-            if (open) {
-                list.style.height = initHeight;
-                list.classList.remove('country__list__selector--active');
-                plus.classList.remove('minus');
-                open = false;
-            }
-            else {
-                list.classList.add('country__list__selector--active');
-                plus.classList.add('minus');
-                const listActive = document.querySelectorAll('.country__list__selector--active > li');
-                let heightList = 0;
-                for (let x = 0; x < listActive.length; x++) {
-                    heightList += listActive[x].clientHeight;
-                }
-                list.style.height = heightList + 'px';
-                open = true;
-            }
-        }) */
     }
-
-    /* function remove(list, plus) {
-        var listActive = document.querySelector('.country__list__selector--active');
-        var plusActive = listActive.previousSibling;
-        listActive.classList.remove('country__list__selector--active');
-        listActive.style.height = '0px';
-        plusActive.classList.remove('minus');
-        add(list, plus);
-    } */
 })();
 
 (function () {
+/*         constructor() {
+            this.time = moment('2018-02-01T20:00:00'), //declare time give it value of moment obj of actual time
+                this.days = -moment().diff(time, 'days'),
+                this.hours = -moment().diff(time.subtract(24 * timer.days, 'hours'), 'hours'),
+                this.minutes = -moment().diff(time.subtract(60 * timer.hours, 'minutes'), 'minutes'),
+                this.secondes = -moment().diff(time.subtract(60 * timer.minutes, 'seconds'), 'seconds'),
+                this.allValues = [],
+                this.calculateAllValues = (timer) => {
+                    for (let index in timer) {
+                        timer[index] = timer[index].toString();
+                        if (timer[index].length === 1) {
+                            timer[index] = '0' + timer[index];
+                        }
+                        timer.allValues.push(timer[index]);
+                    }
+                },
+                this.initDom = (initDomElements) => {
+                    for (let i = 0; i < initDomElements.length; i++) {
+                        initDomElements[i].innerHTML = timer.all[i];
+                    }
+                }
+        }
+
+        const timer = new constructor();
+    timer.initDom(document.querySelectorAll('.home__timer__box > p > span'));
+    timer.calculateAllValues(timer);    
+    const refresh = 1000;
+
+        setInterval(() => {
+            const actualTimer = new constructor();
+        },refresh);
+
+ */
+        
     let timer = {}; // declare timer give it value of empty obj
     var time = moment('2018-02-01T20:00:00'); //declare time give it value of moment obj of actual time
     timer.days = -moment().diff(time, 'days');
@@ -178,8 +175,15 @@ var moment = require('moment');
 (function () {
     const navBar = document.querySelector('.country');
     const map = document.querySelector('.toggle-nav');
+    const backNav = document.querySelector('.back');
+    const content = document.querySelector('.content');
 
     map.addEventListener('click', function () {
-        navBar.classList.toggle('country--active');
+        navBar.classList.add('country--active');
+        content.classList.add('content--active');
     });
+    backNav.addEventListener('click', function () {
+        navBar.classList.remove('country--active');
+        content.classList.remove('content--active');
+    })
 })();

@@ -5,14 +5,17 @@
   min-height: 100vh;
   position: fixed;
   z-index: 1;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
   top: 0;
+  -webkit-box-shadow: -10px 0px 13px 0px rgba(0,0,0,0.09);
+-moz-box-shadow: -10px 0px 13px 0px rgba(0,0,0,0.09);
+box-shadow: -10px 0px 13px 0px rgba(0,0,0,0.09);
   left: 0;
-  transition: 0.3s $easeInOutCubic;
+  transition: 0.5s;
   transform: translateX(100%);
   &--active {
-    transform: translateX(0%);
-  }
+    transform: translateX(25%);
+  } 
   &__logo {
     width: 40px;
     fill: $black;

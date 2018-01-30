@@ -11,7 +11,7 @@
   &__title {
     font-family: $font-normal;
     @include font-size(3.5);
-    color: white;
+    color: $black;
     font-weight: 700;
     margin-top: 10px;
     margin-bottom: 5px;
@@ -19,7 +19,7 @@
   &__undertitle {
     font-family: $font-normal;
     @include font-size(2.5);
-    color: white;
+    color: $black;
     font-weight: 400;
   }
   &__timer {
@@ -35,7 +35,7 @@
         @include font-size(3.7);
         font-family: $font-normal;
         font-weight: 700;
-        color: white;
+        color: $black;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -84,7 +84,7 @@
         @include font-size(1.2);
         font-family: $font-normal;
         font-weight: 500;
-        color: white;
+        color: $black;
       }
       & > p {
         text-align: center;

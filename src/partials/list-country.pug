@@ -7,7 +7,7 @@
         </svg>
     h3.country__title select your location
     ul.country__list
-        each zone in [{country: 'Amerique du Nord', stores: ['New York', 'Boston', 'San Francisco', 'Québec', 'Toronto', 'Montréal']},{country: 'test2', stores: ['5', '8']} ]
+        each zone in [{country: 'Amerique du Nord', stores: ['New York', 'Boston', 'San Francisco', 'Québec', 'Toronto', 'Montréal']},{country: 'Europe', stores: ['France', 'Ireland', 'Suisse']} ]
             div
                 div.country__list__plus
                     span
@@ -16,5 +16,3 @@
                 ul.country__list__selector
                     each store in zone.stores
                         li= store.toUpperCase()
-
-
