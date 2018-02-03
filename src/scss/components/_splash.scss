@@ -22,6 +22,7 @@
     }
     z-index: 5;
     background-color: $white;
+    display: none;
 
     &__container {
         @extend %center-content;

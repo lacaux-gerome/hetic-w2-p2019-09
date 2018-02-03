@@ -100,7 +100,7 @@ var moment = require('moment');
  */
         
     let timer = {}; // declare timer give it value of empty obj
-    var time = moment('2018-02-01T20:00:00'); //declare time give it value of moment obj of actual time
+    var time = moment('2018-02-25T20:00:00'); //declare time give it value of moment obj of actual time
     timer.days = -moment().diff(time, 'days');
     timer.hours = -moment().diff(time.subtract(24 * timer.days, 'hours'), 'hours');
     timer.minutes = -moment().diff(time.subtract(60 * timer.hours, 'minutes'), 'minutes');
@@ -129,7 +129,7 @@ var moment = require('moment');
     setInterval(function () {
         let actualTimer = {}; // object for the new value of timer
         //diff method remove value to time, we need to reset it everytimes
-        time = moment('2018-02-01T20:00:00');
+        time = moment('2018-02-25T20:00:00');
         // calcul the diff between time and now
         actualTimer.days = -moment().diff(time, 'days');
         actualTimer.hours = -moment().diff(time.subtract(24 * actualTimer.days, 'hours'), 'hours');
@@ -175,7 +175,7 @@ var moment = require('moment');
 (function () {
     const navBar = document.querySelector('.country');
     const map = document.querySelector('.toggle-nav');
-    const backNav = document.querySelector('.back');
+    const backNav = document.querySelector('.country__back');
     const content = document.querySelector('.content');
 
     map.addEventListener('click', function () {

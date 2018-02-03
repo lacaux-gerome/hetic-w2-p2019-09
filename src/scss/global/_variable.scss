@@ -43,8 +43,8 @@ include in your content like this
 */
 // Fonts
 
-$Avenir: 'AvenirNext', 'arial', 'sans-serif';
-$font-normal: $Avenir;
+$proxima: 'Proxima', 'sans-serif';
+$font-normal: $proxima; 
 
 @mixin font-size($sizeValue) {
   font-size: ($sizeValue * 10) + px;

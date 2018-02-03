@@ -1,18 +1,24 @@
 @font-face {
-  font-family: 'Trade';
-  src: url('../fonts/TradeGothicLT.ttf') format('truetype');
+  font-family: 'Proxima';
+  src: url('../fonts/proximaz/normal/ProximaNova-Regular.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Trade';
-  src: url('../fonts/TradeGothicLTBold.ttf') format('truetype');
+  font-family: 'Proxima';
+  src: url('../fonts/proximaz/normal/ProximaNova-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Trade';
-  src: url('../fonts/TradeGothicLTLight.ttf') format('truetype');
+  font-family: 'Proxima';
+  src: url('../fonts/proximaz/normal/ProximaNova-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima';
+    src: url("../fonts/proximaz/normal/ProximaNova-RegItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
 }
