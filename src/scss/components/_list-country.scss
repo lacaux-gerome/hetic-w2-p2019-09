@@ -1,109 +1,151 @@
 .country {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: 0.4s $easeInOutCubic;
-  transform: translateX(100%);
-  &__logo {
-    width: 40px;
-    fill: $black;
-    margin: 25px auto 15px auto;
-    padding: 5px;
-  }
-  &__title {
-    text-transform: uppercase;
-    color: $black;
-    @include font-size(1.8);
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-  }
-  &__list {
-    list-style: none;
     display: flex;
     flex-direction: column;
-    &__zone {
-      padding: 1.5rem;
-      text-transform: uppercase;
-      font-family: $font-normal;
-      font-weight: 500;
-      @include font-size(1.5);
-      border-bottom: 1px solid #d3d2d2;
-      cursor: pointer;
-      position: relative;
-    }
-    &__selector {
-      overflow: hidden;
-      height: 0px;
-      transition: 0.5s $easeInOutCubic;
-      & > li {
-        background-color: $grey;
-        line-height: 70px;
-        padding-left: 1.5rem;
-        @include font-size(1.5);
-        cursor: pointer;
-        &:nth-child(0n+2){
-          border-top: 1px solid #d3d2d2;
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    top: 0;
+    -webkit-box-shadow: -10px 0px 13px 0px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: -10px 0px 13px 0px rgba(0, 0, 0, 0.09);
+    box-shadow: -10px 0px 13px 0px rgba(0, 0, 0, 0.09);
+    left: 0;
+    transition: 0.5s;
+    transform: translateX(100%);
+
+    &--active {
+        @include tablet {
+            transform: translateX(25%);
         }
-      }
-      &--active {
-      }
+        transform: translateX(0%);
     }
-    .minus {
-      span:first-child {
-        height: 0%;
-      }
-      span:last-child {
-        width: 0%;
-        transition-delay: 0s;
-        &:before {
-          width: 12px;
-          transition-delay: 0.4s;
-        }
-      }
-    }
-    &__plus {
+
+    &__back {
+      width: 20px;
+      height: 20px;
       position: absolute;
-      right: 1.6rem;
-      top: 1.6rem;
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      span:first-child {
-        position: absolute;
-        top: 0;
-        left: 40%;
-        width: 20%;
-        height: 100%;
-        background-color: $black;
-        transition: 0.2s;
-        transition-delay: 0.3s;
-      }
-      span:last-child {
-        position: absolute;
-        top: 40%;
-        right: 0;
-        width: 100%;
-        height: 20%;
-        background-color: $black;
-        transition: 0.4s;
-        transition-delay: 0.4s;
-        &:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 0;
-          height: 100%;
-          background-color: $black;
-          transition: 0.2s;
-          transition-delay: 0s;
-        }
-      }
+      top: 10px;
+      left: 10px;
     }
-  }
+
+    &__logo {
+        width: 40px;
+        fill: $black;
+        margin: 25px auto 15px auto;
+        padding: 5px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        color: $black;
+        @include font-size(1.3);
+        text-align: center;
+        font-weight: 400;
+        text-align: center;
+        position: relative;
+        width: 70%;
+        margin: 10vh auto 20px auto;
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        margin: 0 auto;
+
+        & > div {
+            position: relative;
+        }
+
+        &__zone {
+            padding: 1.2rem;
+            text-transform: uppercase;
+            font-family: $font-normal;
+            font-weight: 500;
+
+            @include font-size(1);
+
+            border-bottom: 1px solid #d3d2d2;
+            cursor: pointer;
+            position: relative;
+        }
+
+        &__selector {
+            overflow: hidden;
+            height: 0px;
+            transition: 0.3s linear;
+            transition-delay: 0s;
+
+            & > li {
+                background-color: rgba($grey,0.5);
+                line-height: 70px;
+                padding-left: 1rem;
+                @include font-size(1);
+                cursor: pointer;
+            }
+        }
+
+        .minus {
+            span:first-child {
+                height: 0%;
+            }
+
+            span:last-child {
+                width: 0%;
+                transition-delay: 0s;
+                &:before {
+                    width: 12px;
+                    transition-delay: 0.4s;
+                }
+            }
+        }
+
+        &__plus {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+
+            span:first-child {
+                position: absolute;
+                top: 0;
+                left: 40%;
+                width: 20%;
+                height: 100%;
+                background-color: $black;
+                transition: 0.2s;
+                transition-delay: 0.3s;
+            }
+
+            span:last-child {
+                position: absolute;
+                top: 40%;
+                right: 0;
+                width: 100%;
+                height: 20%;
+                background-color: $black;
+                transition: 0.4s;
+                transition-delay: 0.4s;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 0;
+                    height: 100%;
+                    background-color: $black;
+                    transition: 0.2s;
+                    transition-delay: 0s;
+                }
+            }
+        }
+    }
 }

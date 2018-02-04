@@ -4,6 +4,8 @@ colors
 $black: #000000;
 $grey: #e9e9e9;
 $grey-footer: #7a7b7b;
+$black-light : rgb(40,40,40);
+$white: #fff; 
 
 // Media queries
 $s-width: 768px; // small width
@@ -11,9 +13,18 @@ $m-width: 992px; // medium width
 $l-width: 1200px; // large width
 $xl-width: 1600px; // xlarge width
 
-$min-small-width: "only screen and (min-width:#{$s-width})";
-$min-medium-width: "only screen and (min-width:#{$m-width})";
-$min-large-width: "only screen and (min-width:#{$l-width})";
+@mixin tablet {
+    @media (min-width: #{$s-width}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$m-width}) {
+        @content;
+    }
+}
+
 
 /*
 include in your content like this
@@ -33,12 +44,26 @@ include in your content like this
 */
 // Fonts
 
-$Avenir: 'AvenirNext', 'arial', 'sans-serif';
-$font-normal: $Avenir;
+$proxima: 'Proxima', 'sans-serif';
+$font-normal: $proxima; 
 
 @mixin font-size($sizeValue) {
   font-size: ($sizeValue * 10) + px;
   font-size: ($sizeValue/1.6) + rem;
+}
+
+%center-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin animation($name,$duration,$delay,$fillmode,$timing){
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-fill-mode: $fillmode;
+  animation-timing-function: $timing;
 }
 
 // Transitions
