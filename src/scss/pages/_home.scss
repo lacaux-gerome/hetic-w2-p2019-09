@@ -81,16 +81,12 @@
     margin-bottom: 5px;
     text-align: center;
   }
-  &__exception {
-    font-family: $font-normal;
-    color: $black;
-    @include font-size(12);
-    font-weight: 700;
-    letter-spacing: 0.5rem;
-    line-height: 150%;
+  &__bg {
     position: absolute;
-    top: -100px;
-    opacity: 0.02;
+    z-index: -1;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(40, 40, 40, 1);
   }
   &__undertitle {
     font-family: $font-normal;
