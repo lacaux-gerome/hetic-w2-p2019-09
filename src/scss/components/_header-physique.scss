@@ -3,6 +3,31 @@
   justify-content: center;
   display: flex;
   align-items: center;
+  background-color: $red;
+  &__burger {
+    position: relative;
+    width: 30px;
+    height: 25px;
+    div {
+      position: relative;
+      width: 100%;
+      height: 3px;
+      background-color:$black-light;
+      &:first-child{
+        top: 0;
+        left: 0;
+      }
+      &:nth-child(2){
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+      &:last-child{
+        top: 100%;
+        left: 0;
+      }
+    }
+  }
   &__container {
     display: flex;
     justify-content: space-between;

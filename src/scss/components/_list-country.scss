@@ -16,7 +16,7 @@
 
     &--active {
         @include tablet {
-            transform: translateX(25%);
+            transform: translateX(0%);
         }
         transform: translateX(0%);
     }

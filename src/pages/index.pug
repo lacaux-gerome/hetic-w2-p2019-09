@@ -1,18 +1,20 @@
-include ../partials/header.pug
 include ../partials/splash.pug
 include ../partials/header-physique.pug
 include ../partials/list-country.pug
-
+div.bg
+include ../partials/header.pug
 div.content
-    .home
-        div.home__bg
+    div.home__bg
+    .home 
         .home__content
+            h1.home__contentTitle Nike 
+                br
+                | Hyperadapt 1.0
             .home__contentImg
                 img(src="", alt="")
-            .home__cta 
+            a(href="page2.html", title="En savoir plus sur la chaussure").home__cta 
                 span    
-                    span +
-            
+                    span +    
         div.home__timer
             div.home__timer__box
                 p#entry0.days__value
