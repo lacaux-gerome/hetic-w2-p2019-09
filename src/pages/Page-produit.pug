@@ -1,1 +1,16 @@
 include ../partials/header.pug
+.productContent
+    .productContent__visual
+        img(src="../img/bck_product-page.jpg" alt="img product background")
+        .product_contentvisualTitle
+            h2 HyperAdapt 1.0
+            span Reactive Lacing
+    //.rotator
+    .shoesSize
+        p.shoesSize__info sélectionner une pointure
+        ul
+            each size in ['37.5','38','38.5','39','40','40.5','41','42','42.5','43','44','44.5','45','45.5','45.5','46','47','47.5','48.5','49.5']
+                li= 'EU ' + size
+        a(href="https://www.nike.com/fr/launch/t/hyperadapt-1-0", target="_blank" title="En savoir plus sur la chaussure") Continuer
+
+include ../partials/footer
