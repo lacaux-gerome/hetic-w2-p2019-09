@@ -1,35 +1,59 @@
-include ../partials/header.pug
 include ../partials/splash.pug
 include ../partials/header-physique.pug
 include ../partials/list-country.pug
-
+div.bg
+include ../partials/header.pug
 div.content
-    .home
-        div.home__bg
-        .home__content
-            .home__contentImg
-                img(src="", alt="")
-            .home__cta 
+    div.home__bg
+        a(href="Page-produit.html", title="En savoir plus sur la chaussure").home__cta 
                 span    
                     span +
-            
-        div.home__timer
-            div.home__timer__box
-                p#entry0.days__value
-                    span.item
-                p.days__unit days
-            div.home__timer__box
-                p#entry1.hours__value
-                    span.item
-                p.days__unit hours
-            div.home__timer__box
-                p#entry2.days__value
-                    span.item
-                p.minutes__unit minutes
-            div.home__timer__box
-                p#entry3.seconds__value
-                    span.item.item__second--active
-                p.seconds__unit seconds
+    .home
+        .container 
+            .home__content
+                h1.home__contentTitle Nike 
+                    br
+                    | Hyperadapt 1.0
+                .home__contentImg
+                    img(src="", alt="")
+                .home__contentAside
+                    p 33°34'58"S / 18°39'21"E   
+            div.home__timer
+                div.home__timer__box
+                    p#entry0.days__value
+                        span.item
+                    p.days__unit days
+                div.home__timer__box
+                    p#entry1.hours__value
+                        span.item
+                    p.days__unit hours
+                div.home__timer__box
+                    p#entry2.days__value
+                        span.item
+                    p.minutes__unit minutes
+                div.home__timer__box
+                    p#entry3.seconds__value
+                        span.item.item__second--active
+                    p.seconds__unit seconds
 
+
+            .block-produit.block-produit--cta.block-produit--counter
+                .block-produit__left
+                    p.block-produit__counter 01
+                    h3.block-produit__leftTitle new collection
+                    p.block-produit__leftDesc Découvrez les chaussures du futur. La Nike HyperAdapt 1.0 est la première chaussure sportive entièrement fonctionnelle qui s'ajuste de manière électronique aux contours de votre pied à l'aide d'une technologie de laçage auto-ajusté, offrant un maintien personnalisé et ne faisant plus qu'un avec votre pied.
+                    button.block-produit__cta En savoir plus
+                div.block-produit__bg
+                    .block-produit__right
+                        h4.block-produit__rightSurTitle Nike hyperAdapt
+                        p.block-produit__rightTitle gris loup
+                        img(src="", alt="Chaussure Nike de la nouvelle collection").block-produit__rightImage
+        .home__video
+            video(src="../video/Nike HyperAdapt 1.0 2.mp4" muted="true" preload="metadata" controls="controls").home__videoContent
+            p.home__videoStepper
+                span 02
+        .container
+            p.home__quote " Chez Nike, l'innovation ne consiste pas à rêver de demain. Il s'agit plutôt d'accélérer le pas "
+            p.home__quote " Il arrive que nous réalisions des choses qui n'ont jamais traversé l'esprit d'autres personnes"
 
 include ../partials/footer

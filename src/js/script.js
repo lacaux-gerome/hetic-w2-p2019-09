@@ -65,40 +65,7 @@ var moment = require('moment');
 })();
 
 (function () {
-/*         constructor() {
-            this.time = moment('2018-02-01T20:00:00'), //declare time give it value of moment obj of actual time
-                this.days = -moment().diff(time, 'days'),
-                this.hours = -moment().diff(time.subtract(24 * timer.days, 'hours'), 'hours'),
-                this.minutes = -moment().diff(time.subtract(60 * timer.hours, 'minutes'), 'minutes'),
-                this.secondes = -moment().diff(time.subtract(60 * timer.minutes, 'seconds'), 'seconds'),
-                this.allValues = [],
-                this.calculateAllValues = (timer) => {
-                    for (let index in timer) {
-                        timer[index] = timer[index].toString();
-                        if (timer[index].length === 1) {
-                            timer[index] = '0' + timer[index];
-                        }
-                        timer.allValues.push(timer[index]);
-                    }
-                },
-                this.initDom = (initDomElements) => {
-                    for (let i = 0; i < initDomElements.length; i++) {
-                        initDomElements[i].innerHTML = timer.all[i];
-                    }
-                }
-        }
 
-        const timer = new constructor();
-    timer.initDom(document.querySelectorAll('.home__timer__box > p > span'));
-    timer.calculateAllValues(timer);    
-    const refresh = 1000;
-
-        setInterval(() => {
-            const actualTimer = new constructor();
-        },refresh);
-
- */
-        
     let timer = {}; // declare timer give it value of empty obj
     var time = moment('2018-02-25T20:00:00'); //declare time give it value of moment obj of actual time
     timer.days = -moment().diff(time, 'days');
@@ -187,3 +154,91 @@ var moment = require('moment');
         content.classList.remove('content--active');
     })
 })();
+
+
+
+
+
+/* $(function () {
+    var elements = document.querySelectorAll('.no-animation'),
+        derniere_position_de_scroll_connue = 0,
+        ticking = false;
+
+    function faitQuelquechose(position_scroll) {
+        var height_of_parent = window.innerHeight;
+        var distance_bottom_start = 50;
+        for (var j = 0; j < elements.length; j++) {
+            elements[j].getBoundingClientRect().top;
+            if (elements[j].getBoundingClientRect().top + distance_bottom_start < height_of_parent){
+                elements[j].classList.add('animate');
+            }
+        }
+    }
+
+    var isLoaded = false;
+    var init_function = function () {
+        if(isLoaded) {
+            derniere_position_de_scroll_connue = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(function () {
+                    faitQuelquechose(derniere_position_de_scroll_connue);
+                    ticking = false;
+                });
+            }
+            ticking = true;
+        }
+    };
+
+    var init_function_load = function () {
+        isLoaded = true;
+        init_function();
+    };
+
+    window.addEventListener('scroll', init_function, false);
+    window.addEventListener('load', init_function_load, false);
+    setTimeout(function(){
+        init_function_load();
+    }, 1000);
+});
+
+(function () {
+    let elements = document.querySelectorAll('.no-animation'),
+        derniere_position_de_scroll_connue = 0,
+        ticking = false;
+
+    function faitQuelquechose(position_scroll) {
+        var height_of_parent = window.innerHeight;
+        var distance_bottom_start = 50;
+        for (var j = 0; j < elements.length; j++) {
+            elements[j].getBoundingClientRect().top;
+            if (elements[j].getBoundingClientRect().top + distance_bottom_start < height_of_parent) {
+                elements[j].classList.add('animate');
+            }
+        }
+    }
+
+    var isLoaded = false;
+    var init_function = function () {
+        if (isLoaded) {
+            derniere_position_de_scroll_connue = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(function () {
+                    faitQuelquechose(derniere_position_de_scroll_connue);
+                    ticking = false;
+                });
+            }
+            ticking = true;
+        }
+    };
+
+    var init_function_load = function () {
+        isLoaded = true;
+        init_function();
+    };
+
+    window.addEventListener('scroll', init_function, false);
+    window.addEventListener('load', init_function_load, false);
+    setTimeout(function () {
+        init_function_load();
+    }, 1000);
+}); */

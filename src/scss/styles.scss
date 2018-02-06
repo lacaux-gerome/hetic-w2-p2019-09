@@ -4,6 +4,7 @@
 @import 'global/_variable';
 @import "global/_fonts";
 @import 'global/_reset';
+@import "global/_global";
 
 //components
 @import 'components/_footer';
@@ -12,7 +13,7 @@
 @import "components/_splash";
 @import "components/_button";
 @import "components/_header-physique";
-@import "global/_global";
+@import "components/_produit-home.scss";
 
 //pages
 @import "pages/_home";
