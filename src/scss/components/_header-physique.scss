@@ -5,9 +5,12 @@
   align-items: center;
   background-color: $red;
   &__item {
-    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     svg {
-      width: 40;
+      width: 50px;
+      fill: $white;
     }
   }
   &__burger {
@@ -17,6 +20,16 @@
     background-color: $white;
     border-radius: 100%;
     cursor: pointer;
+    &:hover {
+        div {
+          &:first-child{
+            width: 35%;
+          }
+          &:last-child {
+            width: 10%;
+          }
+        }
+    }
     &:before {
       content: '';
       position: absolute;
@@ -40,8 +53,9 @@
       background-color: $black-light;
     }
     div {
+      transition: 0.3s $easeInOutCubic;
       width: 40%;
-      height: 3px;
+      height: 2px;
       background-color: $red;
       position: absolute;
       border-radius: 3px;
@@ -57,8 +71,8 @@
       }
       &:last-child {
         top: 65%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        right: 50%;
+        transform: translate(50%,-50%);
       }
     }
   }

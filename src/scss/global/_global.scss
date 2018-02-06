@@ -5,14 +5,21 @@ body {
 
 .content {
   min-height: 100vh;
+  transition: 0.3s $easeInOutCubic;
   &--active{
-    filter: blur(2px)
+    filter: blur(2px);
+    transform: scale(0.85);
   }
 }
 
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
 ::selection {
-  background-color: #03fdfc;
-  color: $black;
+  background-color: $black-light;
+  color: $white;
 }
 
 ::-webkit-scrollbar {
@@ -25,5 +32,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #03fdfc;
+  background-color: $black-light;
 }

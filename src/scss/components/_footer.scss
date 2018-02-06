@@ -22,9 +22,12 @@
     font-weight: 300;
     @include font-size(1);
     letter-spacing: 1rem;
-    padding-left: 1rem;
+    padding-left: 0.48rem;
     margin: 60px auto;
     font-family: $font-normal;
+    @include tablet {
+     padding-left: 1rem;
+    }
   }
   &__socials {
     width: 100%;
