@@ -105,6 +105,13 @@
   &__rightImage {
     display: block;
     margin-top: 30px;
+    width: 100%;
+    overflow: hidden;
+    height: 330px;
+    img {
+      width: 100%;
+      transform: translateY(-20%);
+    }
   }
 
   // states
