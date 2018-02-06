@@ -12,7 +12,19 @@
   a {
     text-decoration: none;
   }
-  
+  &__contentImg {
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    @include tablet {
+      width: 50%;
+      transform: translateX(-15%);
+    }
+    img{
+      width: 100%;
+    }
+  }
   &__contentAside {
     font-family: $proximaCondensed;
     font-weight: 500;
@@ -20,8 +32,11 @@
     color: $white;
     transform-origin: top left;
     position: absolute;
-    top: 100%;
+    top: 120%;
     right: 10%;
+    @include tablet {
+      top: 100%;
+    }
     & > p {
       position: relative;
       &:before{
@@ -306,5 +321,118 @@
     &:last-child {
     margin: 60px auto 0 auto;      
     }
+  }
+  &__carousel {
+    width: 100%;
+    padding: 50px 0;
+    background-color: rgba($grey, 0.4);
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+      .home__carouselBlock {
+      // variables
+      $shoes1 : #e0553e;
+      $shoes2 : #cf9b23;
+      $shoes3 : #d3d3dd;
+      $shoes4 : #f53133;
+        &:nth-of-type(1){
+          .home__carouselImage:before {
+          background-color: $shoes1;
+          }
+        }
+        &:nth-of-type(2){
+          .home__carouselImage:before {
+          background-color: $shoes2;
+          }
+        }
+        &:nth-of-type(3){
+          .home__carouselImage:before {
+          background-color: $shoes3;
+          }
+        }
+        &:nth-of-type(4){
+          .home__carouselImage:before {
+          background-color: $shoes4;
+          }
+        }
+      }
+    a {
+      display: inline-block;
+      width: 80%;
+      margin: 15px auto 0 auto;
+      @include tablet {
+        width: 26%;
+      }
+      &:hover {
+        .home__carouselImage:before{
+          width: 60%;
+          padding-bottom: 60%;
+        }
+      }
+    }
+  }
+  &__carouselBlock {
+    width: 100%;
+    overflow: hidden;        
+    margin: 0;
+    padding: 20px;
+    background-color: $white;
+  }
+  &__carouselTitle {
+    font-family: $font-normal;
+    font-weight: 700;
+    font-size: 30px;
+    font-size: 1.875rem;
+    text-align: center;
+    margin: 70px auto 50px auto;
+    color: #282828;
+    text-transform: uppercase;
+  }
+  &__carouselImage {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100%;
+    height: 0px;
+    &:before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 50%;
+      padding-bottom: 50%;
+      background-color: $red;
+      border-radius: 100%;
+      transition: 0.3s $easeInOutCubic;
+    }
+    img {
+      width: 120%;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__slider {
+    width: 200px;
+    height: 3px;
+    background-color: $black-light;
+    margin: 0 auto;
+    @include tablet {
+      margin: 30px 10% 0 auto;
+    }
+    position: relative;
+  }
+  &__sliderStepper {
+    position: absolute;
+    height: 12px;
+    top: 50%;
+    left: 5px;
+    background-color: $red;
+    transform: translateY(-50%);
+    width: 40%;
   }
 }
