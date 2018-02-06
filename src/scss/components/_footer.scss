@@ -11,9 +11,9 @@
       flex-direction: column;
       align-items: center;
       & > svg {
-      width: 30px;
-      fill: $white;
-    }
+        width: 30px;
+        fill: $white;
+      }
     }
   }
   &__innerTitle {
@@ -26,7 +26,7 @@
     margin: 60px auto;
     font-family: $font-normal;
     @include tablet {
-     padding-left: 1rem;
+      padding-left: 1rem;
     }
   }
   &__socials {
@@ -64,22 +64,22 @@
       &:hover {
         &:before {
           transform: translateX(100%);
-        transition-delay: 0s;
+          transition-delay: 0s;
         }
         &:after {
           transform: translateX(0%);
-        transition-delay: 0.15s;
+          transition-delay: 0.15s;
         }
       }
     }
   }
   &__main {
-  color: $grey-footer;
-  @include font-size(1.1);
-  font-family: $font-normal;
-  font-weight: 400;
-  background-color: $white;
-  padding-bottom: 10px;
+    color: $grey-footer;
+    @include font-size(1.1);
+    font-family: $font-normal;
+    font-weight: 400;
+    background-color: $white;
+    padding-bottom: 10px;
   }
   &__list {
     display: flex;

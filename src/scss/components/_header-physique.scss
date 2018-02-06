@@ -21,14 +21,14 @@
     border-radius: 100%;
     cursor: pointer;
     &:hover {
-        div {
-          &:first-child{
-            width: 35%;
-          }
-          &:last-child {
-            width: 10%;
-          }
+      div {
+        &:first-child {
+          width: 35%;
         }
+        &:last-child {
+          width: 10%;
+        }
+      }
     }
     &:before {
       content: '';
@@ -59,20 +59,20 @@
       background-color: $red;
       position: absolute;
       border-radius: 3px;
-      &:first-child{
+      &:first-child {
         top: 34%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
       }
       &:last-child {
         top: 65%;
         right: 50%;
-        transform: translate(50%,-50%);
+        transform: translate(50%, -50%);
       }
     }
   }

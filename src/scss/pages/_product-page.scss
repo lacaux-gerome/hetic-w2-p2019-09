@@ -1,50 +1,52 @@
 .productContent__visual {
   background: $black;
   position: relative;
-  img{
+  img {
     width: 100%;
     display: block;
     margin: 0 auto;
     max-width: 768px;
   }
-  video{
-    filter:blur(5px);
+  video {
+    filter: blur(5px);
   }
 }
-.product_contentvisualTitle{
+
+.product_contentvisualTitle {
   position: absolute;
-  top:20px;
+  top: 20px;
   left: 20px;
   h2, span {
     color: $white;
     font-family: $font-normal;
   }
-  h2{
+  h2 {
     @include font-size(2.5);
   }
-  span{
+  span {
     margin: 5px 0 0 0;
     display: block;
     @include font-size(5);
     font-weight: 700;
   }
 }
-.shoesSize{
+
+.shoesSize {
   padding: 20px;
-  p{
+  p {
     @include font-size(3);
     text-transform: uppercase;
     font-family: $font-normal;
     text-align: center;
     font-weight: 700;
   }
-  ul{
+  ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 20px 0 0 0;
   }
-  li{
+  li {
     width: 20%;
     cursor: pointer;
     text-align: center;
@@ -53,17 +55,17 @@
     border: solid 1px #F2F2F2;
     padding: 20px 0;
     box-sizing: border-box;
-    &:nth-of-type(3){
+    &:nth-of-type(3) {
       background: #F2F2F2;
       color: #B2B2B2;
     }
-    &:hover{
+    &:hover {
       background: #F2F2F2;
     }
   }
-  a{
+  a {
     display: block;
-    height:50px;
+    height: 50px;
     line-height: 50px;
     background: #B8B8B8;
     text-align: center;
@@ -73,26 +75,26 @@
     margin: 20px 0 0 0;
     font-family: $font-normal;
     transition: 1s;
-    &:hover{
+    &:hover {
       background: $black;
       transition: 1s;
     }
-    @include desktop{
+    @include desktop {
       max-width: 200px;
       margin: 20px auto 0 auto;
     }
   }
 }
 
-.creator{
+.creator {
   padding: 20px;
-  background:  $red;
+  background: $red;
   min-height: 320px;
   position: relative;
-  @include desktop{
+  @include desktop {
     min-height: 480px;
   }
-  h3{
+  h3 {
     text-transform: uppercase;
     position: absolute;
     right: 20px;
@@ -100,36 +102,40 @@
     color: $white;
     font-family: $font-normal;
     font-weight: 700;
-    @include desktop{
+    @include desktop {
       right: 20%;
       animation: textSlide 2s;
     }
   }
-  p{
+  p {
     @include font-size(1.5);
     font-family: $font-normal;
     font-style: italic;
     position: absolute;
     right: 20px;
     top: 60px;
-    @include desktop{
+    @include desktop {
       right: 20%;
       animation: textSlide 2s;
     }
   }
 
   @keyframes textSlide {
-    from{right: -250px}
-    to{right: 20%}
+    from {
+      right: -250px
+    }
+    to {
+      right: 20%
+    }
   }
 
-  img{
+  img {
     position: absolute;
     max-width: 140px;
     display: block;
     bottom: 0;
     animation: slideM 2s;
-    @include desktop{
+    @include desktop {
       max-width: 300px;
       left: 20%;
       animation: slideD 2s;
@@ -137,16 +143,24 @@
   }
 
   @keyframes slideM {
-    from{left: -250px}
-    to{left: 20px}
+    from {
+      left: -250px
+    }
+    to {
+      left: 20px
+    }
   }
 
   @keyframes slideD {
-    from{left: -250px}
-    to{left: 20%}
+    from {
+      left: -250px
+    }
+    to {
+      left: 20%
+    }
   }
 
-  .creator__infos{
+  .creator__infos {
     position: absolute;
     bottom: 60px;
     color: $white;
@@ -156,7 +170,7 @@
     right: 10%;
     top: 40%;
     font-weight: 700;
-    @include desktop{
+    @include desktop {
       width: 500px;
       right: 20%;
       @include font-size(2);
@@ -165,44 +179,44 @@
   }
 }
 
-.design{
+.design {
   padding: 20px;
   min-height: 140px;
   background: #f5f5f5;
   position: relative;
   //background: url("../../img/bck_rotation.gif") no-repeat center center;
   background-size: cover;
-  @include desktop{
+  @include desktop {
     min-height: 300px;
   }
-  img{
+  img {
     display: block;
     max-width: 220px;
     position: absolute;
     top: 13%;
     right: 20px;
-    @include desktop{
+    @include desktop {
       max-width: 500px;
       top: 20px;
     }
   }
-  h3{
+  h3 {
     @include font-size(3.5);
-    font-weight:700;
+    font-weight: 700;
     text-transform: uppercase;
     font-family: $font-normal;
     position: absolute;
     left: 15%;
     top: 20px;
   }
-  p{
+  p {
     @include font-size(1.5);
     font-family: $font-normal;
     top: 70px;
     left: 20px;
     position: absolute;
     max-width: 200px;
-    @include desktop{
+    @include desktop {
       @include font-size(2);
       left: 15%;
       max-width: 500px;
@@ -210,7 +224,7 @@
   }
 }
 
-.rotator{
+.rotator {
   background: transparent url("../../img/360_bck.png") no-repeat 0 0;
-  height:500px;
+  height: 500px;
 }
