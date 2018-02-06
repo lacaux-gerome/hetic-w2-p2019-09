@@ -4,9 +4,9 @@ colors
 $black: #000000;
 $grey: #e9e9e9;
 $grey-footer: #7a7b7b;
-$black-light : rgb(40,40,40);
+$black-light: rgb(40, 40, 40);
 $white: #fff;
-$red : #F63854;
+$red: #F63854;
 
 // Media queries
 $s-width: 768px; // small width
@@ -15,17 +15,16 @@ $l-width: 1200px; // large width
 $xl-width: 1600px; // xlarge width
 
 @mixin tablet {
-    @media (min-width: #{$s-width}) {
-        @content;
-    }
+  @media (min-width: #{$s-width}) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media (min-width: #{$m-width}) {
-        @content;
-    }
+  @media (min-width: #{$m-width}) {
+    @content;
+  }
 }
-
 
 /*
 include in your content like this
@@ -54,22 +53,22 @@ $proximaCondensed: 'ProximaCondensed';
   font-size: ($sizeValue/1.6) + rem;
 }
 
-%center-content{
+%center-content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 %background-gradient {
-  background: -moz-linear-gradient(left, rgba(14,22,34,1) 0%, rgba(28,43,64,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(14,22,34,1)), color-stop(100%, rgba(28,43,64,1)));
-background: -webkit-linear-gradient(left, rgba(14,22,34,1) 0%, rgba(28,43,64,1) 100%);
-background: -o-linear-gradient(left, rgba(14,22,34,1) 0%, rgba(28,43,64,1) 100%);
-background: -ms-linear-gradient(left, rgba(14,22,34,1) 0%, rgba(28,43,64,1) 100%);
-background: linear-gradient(to right, rgba(14,22,34,1) 0%, rgba(28,43,64,1) 100%);
+  background: -moz-linear-gradient(left, rgba(14, 22, 34, 1) 0%, rgba(28, 43, 64, 1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(14, 22, 34, 1)), color-stop(100%, rgba(28, 43, 64, 1)));
+  background: -webkit-linear-gradient(left, rgba(14, 22, 34, 1) 0%, rgba(28, 43, 64, 1) 100%);
+  background: -o-linear-gradient(left, rgba(14, 22, 34, 1) 0%, rgba(28, 43, 64, 1) 100%);
+  background: -ms-linear-gradient(left, rgba(14, 22, 34, 1) 0%, rgba(28, 43, 64, 1) 100%);
+  background: linear-gradient(to right, rgba(14, 22, 34, 1) 0%, rgba(28, 43, 64, 1) 100%);
 }
 
-@mixin animation($name,$duration,$delay,$fillmode,$timing){
+@mixin animation($name,$duration,$delay,$fillmode,$timing) {
   animation-name: $name;
   animation-duration: $duration;
   animation-delay: $delay;

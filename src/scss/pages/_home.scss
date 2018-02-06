@@ -4,6 +4,7 @@
   background-color: $red;
   height: 80vh;
 }
+
 .home {
   width: 100%;
   margin: 5vh auto 10vh auto;
@@ -21,7 +22,7 @@
       width: 50%;
       transform: translateX(-15%);
     }
-    img{
+    img {
       width: 100%;
     }
   }
@@ -39,7 +40,7 @@
     }
     & > p {
       position: relative;
-      &:before{
+      &:before {
         content: "";
         top: 50%;
         left: 110%;
@@ -48,7 +49,7 @@
         background-color: $black-light;
         position: absolute;
       }
-      &:after{
+      &:after {
         content: "";
         top: 50%;
         right: 110%;
@@ -68,54 +69,54 @@
     z-index: 1;
     left: 50%;
     transform: translateX(-50%);
-    & > span{
+    & > span {
       position: relative;
       width: 90px;
       height: 90px;
       display: inline-block;
       cursor: pointer;
-      &:hover{
+      &:hover {
         &:after {
           width: 70%;
           height: 70%;
         }
       }
-    &:after {
-      content: "";
-      position: absolute;
-      width: 50%;
-      top: 50%;
-      transition: 0.25s cubic-bezier(.49,-0.72,.81,1.8);
-      left: 50%;
-      transform: translate(-50%,-50%);
-      height: 50%;
-      background-color: $black;
-      color: $white;
-      border-radius: 100%;
-    }
-    &:before {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      content: "";
-      background-color: $white;
-      border-radius: 100%;
-      border: 1px solid $grey;
-    }
-    span {
-      position: absolute;
-      top: 50%;
-      cursor: pointer;
-      z-index: 1;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      color: $white;
-    }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        top: 50%;
+        transition: 0.25s cubic-bezier(.49, -0.72, .81, 1.8);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 50%;
+        background-color: $black;
+        color: $white;
+        border-radius: 100%;
+      }
+      &:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: $white;
+        border-radius: 100%;
+        border: 1px solid $grey;
+      }
+      span {
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        z-index: 1;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+      }
     }
     @include tablet {
-    top: 81%;
-    left: 80%;
-  }
+      top: 81%;
+      left: 80%;
+    }
   }
   &__contentTitle {
     font-family: $font-normal;
@@ -135,11 +136,11 @@
       background-color: $white;
     }
     @include tablet {
-    @include font-size(5);
-  }
-  @include desktop {
-    @include font-size(6);
-  }
+      @include font-size(5);
+    }
+    @include desktop {
+      @include font-size(6);
+    }
   }
   &__content {
     width: 100%;
@@ -176,20 +177,20 @@
     padding: 20px;
     margin: 35vh auto 0 auto;
     justify-content: space-between;
-    -webkit-box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.1);
-    -moz-box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.1);
-    box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 8px 8px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 8px 8px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 8px 8px 5px 0px rgba(0, 0, 0, 0.1);
     @include tablet {
-    flex-direction: column;
-    display: inline-block;
-    margin: 30px auto 0 auto;
-  }
+      flex-direction: column;
+      display: inline-block;
+      margin: 30px auto 0 auto;
+    }
     &__box {
       display: flex;
       flex-direction: column;
       @include tablet {
-    margin-top: 15px;
-  }
+        margin-top: 15px;
+      }
       p:first-child {
         @include font-size(3);
         font-family: $font-normal;
@@ -203,7 +204,7 @@
           @include font-size(3.7);
         }
         .item {
-          &__others{
+          &__others {
             &--active {
               animation-name: itemRoolIn;
               animation-duration: 1s;
@@ -214,10 +215,10 @@
                 0% {
                   transform: translateY(0%);
                 }
-                50%{
+                50% {
                   transform: translateY(-120%);
                 }
-                50.01%{
+                50.01% {
                   transform: translateY(120%);
                 }
                 100% {
@@ -305,13 +306,13 @@
     font-style: italic;
     position: relative;
     &:first-child {
-    margin: 150px auto 0 auto;
+      margin: 150px auto 0 auto;
       &:after {
         content: "";
         position: absolute;
         bottom: -30px;
         left: 50%;
-        transform: translate(-50%,50%);
+        transform: translate(-50%, 50%);
         width: 10px;
         height: 10px;
         background-color: $red;
@@ -319,7 +320,7 @@
       }
     }
     &:last-child {
-    margin: 60px auto 0 auto;      
+      margin: 60px auto 0 auto;
     }
   }
   &__carousel {
@@ -330,33 +331,33 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-      .home__carouselBlock {
+    .home__carouselBlock {
       // variables
-      $shoes1 : #e0553e;
-      $shoes2 : #cf9b23;
-      $shoes3 : #d3d3dd;
-      $shoes4 : #f53133;
-        &:nth-of-type(1){
-          .home__carouselImage:before {
+      $shoes1: #e0553e;
+      $shoes2: #cf9b23;
+      $shoes3: #d3d3dd;
+      $shoes4: #f53133;
+      &:nth-of-type(1) {
+        .home__carouselImage:before {
           background-color: $shoes1;
-          }
-        }
-        &:nth-of-type(2){
-          .home__carouselImage:before {
-          background-color: $shoes2;
-          }
-        }
-        &:nth-of-type(3){
-          .home__carouselImage:before {
-          background-color: $shoes3;
-          }
-        }
-        &:nth-of-type(4){
-          .home__carouselImage:before {
-          background-color: $shoes4;
-          }
         }
       }
+      &:nth-of-type(2) {
+        .home__carouselImage:before {
+          background-color: $shoes2;
+        }
+      }
+      &:nth-of-type(3) {
+        .home__carouselImage:before {
+          background-color: $shoes3;
+        }
+      }
+      &:nth-of-type(4) {
+        .home__carouselImage:before {
+          background-color: $shoes4;
+        }
+      }
+    }
     a {
       display: inline-block;
       width: 80%;
@@ -365,7 +366,7 @@
         width: 26%;
       }
       &:hover {
-        .home__carouselImage:before{
+        .home__carouselImage:before {
           width: 60%;
           padding-bottom: 60%;
         }
@@ -374,7 +375,7 @@
   }
   &__carouselBlock {
     width: 100%;
-    overflow: hidden;        
+    overflow: hidden;
     margin: 0;
     padding: 20px;
     background-color: $white;
@@ -396,12 +397,12 @@
     align-items: center;
     padding-bottom: 100%;
     height: 0px;
-    &:before{
+    &:before {
       content: "";
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       width: 50%;
       padding-bottom: 50%;
       background-color: $red;
