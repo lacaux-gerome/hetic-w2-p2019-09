@@ -1,0 +1,145 @@
+.block-produit {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 100px;
+    width: 92%;
+    margin: 100px auto 0 auto;
+    &__right {
+        margin-top: 20px;
+    }
+    @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+        &__left {
+            width: 50%;
+        }
+        &__bg {
+            max-width: 45%;
+            -webkit-box-shadow: 8px 8px 11px 0px rgba(0,0,0,0.09);
+            -moz-box-shadow: 8px 8px 11px 0px rgba(0,0,0,0.09);
+            box-shadow: 8px 8px 11px 0px rgba(0,0,0,0.09);
+            background-color: $white;
+            position: relative;
+            z-index: 1;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: -5%;
+                width: 50%;
+                border-radius: 5px;
+                background-color: $black-light;
+                height: 110%;
+                transform: translateX(-50%);
+                z-index: -1;
+            }
+        }
+        &__right {
+            height: 100%;
+            background-color: $white;
+            padding: 25px;
+            margin-top: 0;
+            box-sizing: border-box;
+        }
+    }
+    &__left {
+        margin-top: 20px;
+        text-align: center;
+        @include tablet {
+            text-align: left;
+        }
+    }
+    &__leftTitle{
+        font-family: $font-normal;
+        font-weight: 700;
+        @include font-size(3);
+        color: $black-light;
+        text-transform: uppercase;
+    }
+    &__leftDesc {
+        margin-top: 30px;
+        font-family: $font-normal;
+        font-weight: 500;
+        @include font-size(1.5);
+        color: $black-light;
+        line-height: 150%;
+    }
+    &__rightSurTitle {
+        font-family: $proximaCondensed;
+        @include font-size(1.3);
+        font-weight: 700;
+        color: rgb(80, 80, 80);
+        text-transform: uppercase;
+        text-align: center;
+        @include tablet {
+            text-align: left;
+        }
+    }
+    &__rightTitle {
+        font-family: $font-normal;
+        @include font-size(2.5);
+        font-weight: 700;
+        color: $black-light;
+        margin: 15px 0 0 0;
+        text-transform: uppercase;
+        position: relative;
+        text-align: center;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 140%;
+            left: 40%;
+            width: 20%; 
+            height: 4px;
+            background-color: $black-light;
+        }
+        @include tablet {
+            text-align: left;
+            margin: 15px 0 0 10%;
+            &:after {
+                left: 20%;
+            }
+        }
+    }
+    &__rightImage {
+        display: block;
+        margin-top: 30px;
+    }
+
+    // states
+    &--cta &{
+        &__cta {
+            background-color: $red;
+            font-family: $font-normal;
+            width: 80%;
+            margin: 0 auto;
+            padding: 15px 0 15px 0;
+            text-align: center;
+            cursor: pointer;
+            border: none; 
+            color: $white;
+            @include font-size(1.3);
+            margin-top: 40px;
+            max-width: 280px;
+            @include tablet {
+                margin-top: 65px;
+            }
+        }
+    }
+        &--counter & {
+            &__counter {
+                display: none;
+                @include desktop {
+                display: block;
+                position: absolute;
+                top: 13px;
+                left: -50px;
+                padding: 15px 20px 15px 0;
+                font-family: $proximaCondensed;;
+                font-weight: 700;
+                border-right: 3px solid $black-light;
+            }
+            }
+        }
+}

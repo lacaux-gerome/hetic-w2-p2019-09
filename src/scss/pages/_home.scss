@@ -1,14 +1,58 @@
+.bg {
+  width: 100%;
+  position: absolute;
+  background-color: $red;
+  height: 80vh;
+}
 .home {
-  width: 95%;
-  margin: 20vh auto 0 auto;
+  width: 100%;
+  margin: 5vh auto 10vh auto;
   position: relative;
+
+  a {
+    text-decoration: none;
+  }
+  
+  &__contentAside {
+    font-family: $proximaCondensed;
+    font-weight: 500;
+    @include font-size(1.2);
+    color: $white;
+    transform-origin: top left;
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    & > p {
+      position: relative;
+      &:before{
+        content: "";
+        top: 50%;
+        left: 110%;
+        width: 20px;
+        height: 1px;
+        background-color: $black-light;
+        position: absolute;
+      }
+      &:after{
+        content: "";
+        top: 50%;
+        right: 110%;
+        width: 20px;
+        height: 1px;
+        background-color: $black-light;
+        position: absolute;
+      }
+    }
+  }
 
   &__cta {
     width: 90px;
     height: 90px;
     position: absolute;
-    top: calc(100% - 45px);
-    left: calc(100% - 45px);
+    top: 81%;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
     & > span{
       position: relative;
       width: 90px;
@@ -53,17 +97,40 @@
       color: $white;
     }
     }
+    @include tablet {
+    top: 81%;
+    left: 80%;
+  }
+  }
+  &__contentTitle {
+    font-family: $font-normal;
+    @include font-size(4);
+    color: $white;
+    position: relative;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 15%;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 120%;
+      height: 5px;
+      width: 20%;
+      background-color: $white;
+    }
+    @include tablet {
+    @include font-size(5);
+  }
+  @include desktop {
+    @include font-size(6);
+  }
   }
   &__content {
-    width: 70%;
-    height: 300px;
+    width: 100%;
+    height: 50vh;
     margin: 0 auto;
-    -webkit-box-shadow: 0px 0px 28px 6px rgba(0, 0, 0, 0.12);
-    -moz-box-shadow: 0px 0px 28px 6px rgba(0, 0, 0, 0.12);
-     box-shadow: 0px 0px 28px 6px rgba(0, 0, 0, 0.12);
-    background-color: $white;
     position: relative;
-    cursor: pointer;
     &--active {
       width: 100%;
       height: 100%;
@@ -81,13 +148,6 @@
     margin-bottom: 5px;
     text-align: center;
   }
-  &__bg {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 50%;
-    background-color: rgba(40, 40, 40, 1);
-  }
   &__undertitle {
     font-family: $font-normal;
     @include font-size(1);
@@ -96,16 +156,27 @@
     text-align: center;
   }
   &__timer {
-    max-width: 300px;
     display: flex;
-    width: 90%;
-    margin: 30px auto 0 auto;
+    background-color: $white;
+    padding: 20px;
+    margin: 35vh auto 0 auto;
     justify-content: space-between;
+    -webkit-box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 8px 8px 5px 0px rgba(0,0,0,0.1);
+    @include tablet {
+    flex-direction: column;
+    display: inline-block;
+    margin: 30px auto 0 auto;
+  }
     &__box {
       display: flex;
       flex-direction: column;
+      @include tablet {
+    margin-top: 15px;
+  }
       p:first-child {
-        @include font-size(3.7);
+        @include font-size(3);
         font-family: $font-normal;
         font-weight: 700;
         color: $black;
@@ -113,6 +184,9 @@
         display: flex;
         flex-direction: column;
         height: 37px;
+        @include tablet {
+          @include font-size(3.7);
+        }
         .item {
           &__others{
             &--active {
@@ -159,6 +233,78 @@
       & > p {
         text-align: center;
       }
+    }
+  }
+  &__video {
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 120%;
+      left: 70%;
+      height: 4px;
+      width: 20%;
+      background-color: $black-light;
+    }
+    @include tablet {
+      margin-top: 100px;
+    }
+  }
+  &__videoStepper {
+    display: none;
+    @include tablet {
+      display: block;
+      text-transform: uppercase;
+      font-family: $font-normal;
+      font-weight: 700;
+      @include font-size(3);
+      flex-grow: 1;
+      margin-top: 40px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: $black-light;
+      & > span {
+        padding: 15px;
+        border-bottom: 3px solid $black-light;
+      }
+    }
+  }
+  &__videoContent {
+    width: 100%;
+    @include tablet {
+      width: 90%;
+    }
+  }
+  &__quote {
+    width: 100%;
+    max-width: 200px;
+    font-family: $font-normal;
+    @include font-size(1.7);
+    line-height: 150%;
+    color: rgba($black, $alpha: 0.7);
+    text-align: center;
+    font-weight: 500;
+    font-style: italic;
+    position: relative;
+    &:first-child {
+    margin: 150px auto 0 auto;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translate(-50%,50%);
+        width: 10px;
+        height: 10px;
+        background-color: $red;
+        border-radius: 100%;
+      }
+    }
+    &:last-child {
+    margin: 60px auto 0 auto;      
     }
   }
 }
